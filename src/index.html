@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Chemistry Quiz</title>
+  <link rel="stylesheet" href="css/app.css" />
+  <script type="text/javascript" href="js/bootstrap.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=false, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+</head>
+<body>
+  <!-- @ifdef DEV -->
+  <script src="js/vendor/requirejs/require.js" data-main="js/main.js"></script>
+  <!-- @endif -->
+
+  <!-- @ifdef PROD -->
+  <script src="js/app.js"></script>
+  <!-- @endif -->
+
+ <div class="container">
+  <h3>Forms</h3>
+  <input type="text" placeholder="Placeholder"/><br/>
+  <input class="search s2" type="text" placeholder="Search" required="required"/><br/>
+  <input class="search" type="text" placeholder="Search" required="required"/><br/>
+  <input class="search s3" type="text" placeholder="Search" required="required"/><br/><br/>
+  <select>
+    <option value="">Select one...</option>
+    <option value="First">First Choice</option>
+    <option value="Second">Second Choice</option>
+    <option value="Third">Third Choice</option>
+  </select>
+  <div class="holder">
+    <input type="checkbox" value="None" id="check_r" name="check" class="check-ios"
+    checked />
+    <label for="check_r"></label>
+    <span></span>
+  </div>
+  <br/> <br/> <br/>
+  <textarea placeholder="Example Text"></textarea>
+  <button type="submit">Edit</button>
+  <button type="submit" class="primary">Done</button>
+  <button type="submit" class="delete">Delete</button>
+  <button type="submit" class="delete2">Delete</button>
+  <button type="submit" class="success">Success</button>
+  <button type="submit" class="delete2 delete3">-</button>
+</div>
+<div class="container rows r2">
+  <h4 class="subhead">Subheader</h4>
+  <div class="row">
+    <table style="width: 100%;"><tr><td><h4 class="rowtitle">Item</h4></td><td style="width: 5%;text-align: right;"><h4 class="rowtitle rt2">Item</h4></td></tr></table>
+  </div>
+  <div class="row">
+    <h4 class="rowtitle">Item</h4>
+  </div>
+  <div class="row">
+    <h4 class="rowtitle">Item</h4>
+  </div>
+  <div class="row">
+    <h4 class="rowtitle">Item</h4>
+  </div>
+</div>
+<table><tr><td>
+  <div class="favs">
+    <h4 class="favtitle">Favorites</h4>
+    <table><tr>
+      <td>
+        <div class="favcont">
+          <div class="favface"></div>
+          <div class="favlabel">Name</div>
+        </div>
+      </td>
+      <td>
+        <div class="favcont">
+          <div class="favface"></div>
+          <div class="favlabel">Name</div>
+        </div>
+      </td>
+      <td>
+        <div class="favcont">
+          <div class="favface"></div>
+          <div class="favlabel">Name</div>
+        </div>
+      </td>
+      <td>
+        <div class="favcont">
+          <div class="favface"></div>
+          <div class="favlabel">Name</div>
+        </div>
+      </td>
+      <td>
+        <div class="favcont">
+          <div class="favface"></div>
+          <div class="favlabel">Name</div>
+        </div>
+      </td>
+      <td>
+        <div class="favcont">
+          <div class="favface"></div>
+          <div class="favlabel">Name</div>
+        </div>
+      </td>
+    </tr></table>
+  </div>
+</td>
+<td>
+  <div class="favs">
+    <h4 class="favtitle">Recent</h4>
+    <table><tr><td>
+      <div class="favcont">
+        <div class="favface letters">TC</div>
+        <div class="favlabel">Tim Cook</div>
+      </div>
+    </div>
+  </td>
+  <td>
+    <div class="favcont">
+      <div class="favface letters">CF</div>
+      <div class="favlabel">Craig F</div>
+    </div>
+  </div>
+</td>
+<td>
+  <div class="favcont">
+    <div class="favface letters">JI</div>
+    <div class="favlabel">John Ive</div>
+  </div>
+</div>
+</td></tr></table>
+</div>
+</td>
+</tr></table>
+<div class="apps">
+  <div class="appcont">
+    <div class="appicon"></div>
+    <div class="applabel">AppCraft</div>
+  </div>
+</div>
+<div class="nav">
+  <h4>Chemistry</h4>
+</div>
+</body>
+</html>
