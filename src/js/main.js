@@ -1,19 +1,20 @@
 require.config({
     paths: {
-        'jquery': 'vendor/jquery/dist/jquery.min',
-        'bootstrap': 'vendor/bootstrap',
-        'backbone': 'vendor/backbone/backbone',
-        'underscore': 'vendor/underscore/underscore',
-        'hammerjs': 'vendor/jquery-hammerjs/jquery.hammer-full.min',
-        'velocity': 'vendor/velocity/jquery.velocity.min',
-        'velocityui': 'vendor/velocity/velocity.ui',
-        'text': 'vendor/requirejs-text/text',
-        'd3': 'vendor/d3/d3.min',
-        'iscroll': 'vendor/iscroll/build/iscroll',
-        'app': 'app',
-        'libs': 'libs'
+        'jquery'    :   'vendor/jquery/dist/jquery.min',
+        'ratchet'   :   'vendor/ratchet.min',
+        'backbone'  :   'vendor/backbone/backbone',
+        'underscore':   'vendor/underscore/underscore',
+        'hammerjs'  :   'vendor/jquery-hammerjs/jquery.hammer-full.min',
+        'velocity'  :   'vendor/velocity/jquery.velocity.min',
+        'velocityui':   'vendor/velocity/velocity.ui',
+        'text'      :   'vendor/requirejs-text/text',
+        'd3'        :   'vendor/d3/d3.min',
+        'iscroll'   :   'vendor/iscroll/build/iscroll',
+        'app'       :   'app',
+        'libs'      :   'libs'
     },
     shim: {
+        'ratchet': ['jquery'],
         'velocity': ['jquery'],
         'velocityui': ['velocity'],
         'iscroll': {

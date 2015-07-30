@@ -4,7 +4,8 @@ define(function(require, exports, module) {
         var QuizEntry = Backbone.Model.extend({
 
                 defaults: {
-                		category: '',
+                	img: '',
+                        category: '',
                         question: '',
                         choices: [],
                         correct: 0

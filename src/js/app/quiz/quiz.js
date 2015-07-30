@@ -9,6 +9,7 @@ define(function(require) {
 
     var entries = [
     {
+        img: 'helium.png',
         category: 'Chemistry',
         question: 'How many electrons Helium has?',
         choices: ['two', 'four', 'six'],
@@ -19,6 +20,12 @@ define(function(require) {
         question: 'What kind of radiation is emitted by Polonium?',
         choices: ['alpha', 'beta', 'gamma'],
         correct: 0
+    },
+    {
+        category: 'Chemistry',
+        question: 'How invented the Periodic Table?',
+        choices: ['Einstein', 'Watson', 'Mendelejev'],
+        correct: 2
     }
     ];
 
@@ -39,12 +46,36 @@ define(function(require) {
             this.$el.html(template(this.currentEntry.toJSON()));
             return this;
         },
+
+        showThumbsup: function() {
+            this.$('.thumbsup').velocity({ top: '0' }, { duration: 2000, easing: "easeInOutElastic" });
+            setTimeout(function() {
+                this.$('.thumbsup').velocity("reverse", {delay: 1000, duration: 2000});
+            }, 1000);
+        },
+
+        showNotquite: function() {
+            this.$('.notquite').velocity({ top: '0' }, { duration: 2000, easing: "swing" });
+            setTimeout(function() {
+                this.$('.notquite').velocity("reverse", {delay: 1000, duration: 2000});
+            }, 1000);
+        },
+
         sendAnswer: function() {
+            var selected = this.$('input[name=group]:checked', '#choiceForm').val();
+            if(parseInt(selected) == this.currentEntry.get('correct'))
+                this.showThumbsup();
+            else
+                this.showNotquite();
+
             this.currentEntry = this.collection.shift();
+
             if(this.currentEntry == undefined) {
-                this.currentEntry = new QuizEntry({});
+                this.currentEntry = new QuizEntry({question: 'We need to get more questions!'});
             }
-            this.render();
+
+            var self = this;
+            setTimeout(function() { self.render(); }, 5000);
         }
     });
 
