@@ -6,7 +6,9 @@ define(function(require) {
 
         var stateEvents = require('libs/state-events');
 
+        var $body = $("body");
         var $content = $(".content");
+        var $nav = $("#appnav");
 
         var currentView;
 
@@ -19,12 +21,14 @@ define(function(require) {
       };
 
       var ViewHandler = {
+
         setCurrent: function(view, title) {
             if(title)
                 stateEvents.trigger("update:title", title);
 
             if (currentView)
                 currentView.close();
+            $nav.find('a.active').removeClass('active');
 
             currentView = view;
             $content.html(currentView.$el);
