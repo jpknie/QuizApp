@@ -18,25 +18,27 @@ define(function(require) {
 			'stats': 'stats'
 		},
 		initialize: function() {
-            this.addNavBar();
+			this.addNavBar();
         },
 
         addNavBar: function() {
             var navBarView = new NavBarView();
-            console.log(navBarView);
             $body.prepend(navBarView.$el);
         },
 
 		quiz: function() {
-			var quizView = new QuizView();
-			ViewHandler.setCurrent(quizView, "Quiz");
-			quizView.render();
+			var quizView = new QuizView({el:'.content'});
+			//quizView.render();
+			Backbone.Transitions.transit(quizView);
+			//ViewHandler.setCurrent(quizView, "Quiz");
+
 		},
 
 		stats: function() {
-			var statsView = new StatsView();
-			ViewHandler.setCurrent(statsView, "Stats");
-			statsView.render();
+			var statsView = new StatsView({el:'.content'});
+			Backbone.Transitions.transit(statsView);
+			//ViewHandler.setCurrent(statsView, "Stats");
+
 		}
 	});
 });

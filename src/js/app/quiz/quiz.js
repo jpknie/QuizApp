@@ -30,7 +30,6 @@ define(function(require) {
     ];
 
     return Backbone.View.extend({
-        className: 'quiz',
         currentEntry: {},
 
         events: {
@@ -40,7 +39,7 @@ define(function(require) {
         initialize: function() {
             this.collection = new QuizEntries(entries);
             this.currentEntry = this.collection.shift();
-            this.render();
+       //     this.render();
         },
         render: function() {
             this.$el.html(template(this.currentEntry.toJSON()));
@@ -48,6 +47,7 @@ define(function(require) {
         },
 
         showThumbsup: function() {
+            console.log("thumbsup");
             this.$('.thumbsup').velocity({ top: '0' }, { duration: 2000, easing: "easeInOutElastic" });
             setTimeout(function() {
                 this.$('.thumbsup').velocity("reverse", {delay: 1000, duration: 2000});
@@ -55,6 +55,8 @@ define(function(require) {
         },
 
         showNotquite: function() {
+            console.log("thumbsdown");
+
             this.$('.notquite').velocity({ top: '0' }, { duration: 2000, easing: "swing" });
             setTimeout(function() {
                 this.$('.notquite').velocity("reverse", {delay: 1000, duration: 2000});
@@ -62,7 +64,8 @@ define(function(require) {
         },
 
         sendAnswer: function() {
-            var selected = this.$('input[name=group]:checked', '#choiceForm').val();
+            var selected = this.$('input[name=choice]:checked', '#choiceForm').val();
+            console.log(selected);
             if(parseInt(selected) == this.currentEntry.get('correct'))
                 this.showThumbsup();
             else
@@ -75,7 +78,7 @@ define(function(require) {
             }
 
             var self = this;
-            setTimeout(function() { self.render(); }, 5000);
+            setTimeout(function() { Backbone.Transitions.transit(self); }, 5000);
         }
     });
 

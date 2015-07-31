@@ -3,51 +3,129 @@
 }
 
 .quiz-content {
-    //border-radius: 1em;
     padding: 1em;
     position: absolute;
-    top: 5%;
-    left: 10%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
 }
 
 .quiz-content h2 {
+    margin-left: auto;
+    margin-right: auto;
 	width: 80%;
 }
 
 #sendAnswer {
-	position: absolute;
-	left: 20%;
-	width: 200px;
-}
-
-label {
-	vertical-align: top;
+    display: block;
+    clear: both;
+    width: 100%;
 }
 
 .thumbsup {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: -120%;
-        background-color: #fff;
-        background-image: url(../assets/img/thumbsup.png);
-        background-size: 100px 250px;
-        background-repeat: no-repeat;
-        background-position: center;
-        z-index: 99999;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    top: -200%;
+    background-color: #fff;
+    background-image: url(../assets/img/thumbsup.png);
+    background-size: 150px 250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 99999;
 }
 
 .notquite {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: -120%;
-        background-color: #fff;
-        background-image: url(../assets/img/notquite.png);
-        background-size: 100px 260px;
-        background-repeat: no-repeat;
-        background-position: center;
-        z-index: 99999;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    top: -200%;
+    background-color: #fff;
+    background-image: url(../assets/img/notquite.png);
+    background-size: 150px 260px;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 99999;
+}
+
+form {
+    margin: 40px 0;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+div {
+    clear: both;
+    margin: 0 20px;
+}
+
+label {
+    font-family: sans-serif;
+    font-weight: normal;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #D1D3D4;
+}
+
+/* hide input */
+input.radio:empty {
+    margin-left: -2999px;
+}
+
+/* style label */
+input.radio:empty ~ label {
+    position: relative;
+    float: left;
+    line-height: 2.5em;
+    text-indent: 3.25em;
+    margin-top: 2em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+input.radio:empty ~ label:before {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 2.5em;
+    background: #D1D3D4;
+    border-radius: 3px 0 0 3px;
+}
+
+/* toggle hover */
+input.radio:hover:not(:checked) ~ label:before {
+    content:'\2714';
+    text-indent: .9em;
+    color: #C2C2C2;
+}
+
+input.radio:hover:not(:checked) ~ label {
+    color: #888;
+}
+
+/* toggle on */
+input.radio:checked ~ label:before {
+    content:'\2714';
+    text-indent: .9em;
+    color: #9CE2AE;
+    background-color: #4DCB6D;
+}
+
+input.radio:checked ~ label {
+    color: #777;
+}
+
+/* radio focus */
+input.radio:focus ~label:before {
+    box-shadow: 0 0 0 3px #999;
 }

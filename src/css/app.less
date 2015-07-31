@@ -7,3 +7,62 @@
 @import 'partials/stats.less';
 //@import 'vendor/ios-8-bootstrap.less';
 
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+	margin: auto;
+	width: 90%;
+	top: 60px;
+}
+
+/**
+ * Our transition classes
+ */
+.slideInOut {
+    opacity: 0;
+
+    -webkit-transition: -webkit-transform 0.8s ease, opacity 0.3s ease;
+    transition: transform 0.8s ease, opacity 0.3s ease;
+
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+}
+.slideInOut.active {
+    opacity: 1;
+
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slideUpDown {
+    opacity: 0;
+
+    -webkit-transition: -webkit-transform 0.8s ease, opacity 0.3s ease;
+    transition: transform 0.8s ease, opacity 0.3s ease;
+
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+}
+.slideUpDown.active {
+    opacity: 1;
+
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+/**
+ * Our transition classes End
+ */
