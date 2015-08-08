@@ -3,9 +3,9 @@
 <div class="notquite"></div>
 <div class="quiz-content">
 	<h2><%= category %></h2>
-        <% if (img) { %>
-        	<% var imgSrc = "assets/img/" + img; %>
-        	<img src=<%=imgSrc%>>
+        <% if (imageRef) { %>
+        	<% var imgSrc = "assets/img/" + imageRef; %>
+        	<img src=<%=imgSrc%> width="112" height="112">
         <% } %>
         <p><%= question %></p>
         <% var i = 0; %>
@@ -23,15 +23,5 @@
                 <br />
                 <button id="sendAnswer" class="btn">Send Answer</button>
             </div>
-    <!--
-        <div>
-            <input type="radio" name="choice" class="radio" value="Foo" id="foo">
-            <label for="foo">Foo</label>
-        </div>
-        <div>
-            <input type="radio" name="choice" class="radio" value="Qux" id="qux">
-            <label for="qux">Qux</label>
-        </div>
-        </form>-->
 </div>
 </div>

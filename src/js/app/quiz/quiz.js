@@ -9,23 +9,24 @@ define(function(require) {
 
     var entries = [
     {
-        img: 'helium.png',
+        imageRef: 'helium.png',
         category: 'Chemistry',
         question: 'How many electrons Helium has?',
         choices: ['two', 'four', 'six'],
-        correct: 0
+        correctAnswer: 0
     },
     {
+        imageRef: 'radcircle.gif',
         category: 'Chemistry',
         question: 'What kind of radiation is emitted by Polonium?',
         choices: ['alpha', 'beta', 'gamma'],
-        correct: 0
+        correctAnswer: 0
     },
     {
         category: 'Chemistry',
-        question: 'How invented the Periodic Table?',
+        question: 'Who invented the Periodic Table?',
         choices: ['Einstein', 'Watson', 'Mendelejev'],
-        correct: 2
+        correctAnswer: 2
     }
     ];
 
@@ -37,10 +38,12 @@ define(function(require) {
         },
 
         initialize: function() {
+            var self = this;
             this.collection = new QuizEntries(entries);
+            this.collection.fetch({async: false, reset: false});
             this.currentEntry = this.collection.shift();
-       //     this.render();
         },
+
         render: function() {
             this.$el.html(template(this.currentEntry.toJSON()));
             return this;
@@ -49,20 +52,20 @@ define(function(require) {
         showThumbsup: function() {
             this.$('.thumbsup').velocity({ top: '0' }, { duration: 2000, easing: "easeInOutElastic" });
             setTimeout(function() {
-                this.$('.thumbsup').velocity("reverse", {delay: 1000, duration: 2000});
+                this.$('.thumbsup').velocity("reverse", {delay: 500, duration: 2000});
             }, 1000);
         },
 
         showNotquite: function() {
             this.$('.notquite').velocity({ top: '0' }, { duration: 2000, easing: "swing" });
             setTimeout(function() {
-                this.$('.notquite').velocity("reverse", {delay: 1000, duration: 2000});
+                this.$('.notquite').velocity("reverse", {delay: 500, duration: 2000});
             }, 1000);
         },
 
         sendAnswer: function() {
             var selected = this.$('input[name=choice]:checked', '#choiceForm').val();
-            if(parseInt(selected) == this.currentEntry.get('correct'))
+            if(parseInt(selected) == this.currentEntry.get('correctAnswer'))
                 this.showThumbsup();
             else
                 this.showNotquite();
