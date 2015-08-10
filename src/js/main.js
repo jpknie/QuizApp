@@ -10,6 +10,7 @@ require.config({
         'text'      :   'vendor/requirejs-text/text',
         'd3'        :   'vendor/d3/d3.min',
         'iscroll'   :   'vendor/iscroll/build/iscroll',
+        'md5'       :   'libs/md5',
         'app'       :   'app',
         'libs'      :   'libs'
     },
@@ -29,11 +30,7 @@ require([
     'velocityui',
     'libs/delegate-events'
     ], function(Router) {
-        navigator.geolocation.getCurrentPosition(function() {
-                // promt user
-            });
 
         var appRouter = new Router();
         Backbone.history.start();
-
     });
